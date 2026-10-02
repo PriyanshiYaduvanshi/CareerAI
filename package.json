@@ -1,0 +1,10 @@
+{
+  "name": "ai-job-platform",
+  "version": "1.0.0",
+  "description": "AI Job Recommendation Platform - Root",
+  "scripts": {
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+  }
+}
