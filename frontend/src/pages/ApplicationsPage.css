@@ -1,0 +1,32 @@
+/* src/pages/ApplicationsPage.css
+   Previously this page had no CSS file and was styled entirely with
+   inline style={{}} objects. Every value below is carried over
+   1:1 from those inline styles — this is a structural cleanup only,
+   not a visual change. */
+
+.applications-page { max-width: 1000px; }
+
+.apps-status-grid { margin-bottom: 24px; }
+.apps-status-card { text-align: center; cursor: pointer; }
+.apps-status-count { font-size: 26px; font-weight: 800; }
+.apps-status-label { font-size: 13px; color: var(--text-secondary); text-transform: capitalize; margin-top: 4px; }
+
+
+
+.apps-list { display: flex; flex-direction: column; gap: 12px; }
+.app-card { padding: 16px 20px; }
+.app-card-row { display: flex; justify-content: space-between; align-items: flex-start; }
+.app-card-title { font-weight: 700; font-size: 15px; }
+.app-card-company { color: var(--text-secondary); margin-top: 2px; }
+.app-card-meta { display: flex; align-items: center; gap: 6px; font-size: 13px; margin-top: 4px; }
+.app-card-meta.salary { color: var(--success); }
+.app-card-meta.notes { color: var(--text-muted); }
+.app-card-meta.interview { color: var(--secondary); }
+.app-card-actions { display: flex; gap: 8px; align-items: center; }
+.app-status-badge {
+  width: 130px; padding: 6px 10px; font-size: 13px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid; border-radius: var(--radius-sm); text-transform: capitalize;
+  background: var(--bg-white);
+}
+.app-card-footer { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
