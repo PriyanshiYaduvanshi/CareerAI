@@ -1,0 +1,166 @@
+/* src/pages/RoleSelectionPage.css
+   Page-scoped tokens only for values that are unique to this page
+   (not part of the shared design system in global.css). Everything
+   else pulls from the root theme variables so colors stay centralized. */
+.role-page {
+  --role-glow-teal:   rgba(78, 205, 196, 0.20);
+  --role-glow-indigo: rgba(129, 140, 248, 0.18);
+  --role-card-shadow: rgba(20, 23, 31, 0.09);
+
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-white);
+}
+.role-left {
+  flex: 1;
+  padding: 64px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.role-brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 56px;
+}
+.role-brand-chip {
+  display: inline-flex;
+  align-items: center;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+}
+.role-brand-img { height: 45px; width: auto; display: block; }
+
+.role-heading {
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+.role-subheading {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+}
+
+.role-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.role-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  padding: 20px 22px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border);
+  background: var(--bg-white);
+  transition: var(--transition);
+}
+.role-option:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.role-option-selected {
+  background: var(--bg);
+  border-color: var(--border);
+}
+.role-option-selected:hover { border-color: var(--primary); }
+
+.role-option-icon {
+  width: 44px; height: 44px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--border-light);
+  color: var(--text-secondary);
+}
+.role-option-text { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.role-option-title { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.role-option-subtitle { font-size: 13px; color: var(--text-secondary); }
+
+.role-option-badge {
+  flex-shrink: 0;
+  background: #ECFDF5;
+  color: var(--success);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+.role-create-btn {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 15px;
+  background: linear-gradient(135deg, var(--viking-blue));
+  margin-bottom: 20px;
+}
+.role-create-btn:hover { background: linear-gradient(135deg, var(--viking-blue-hover-start), var(--viking-blue-hover-end)); box-shadow: 0 4px 12px var(--viking-blue-shadow); }
+
+.role-signin-hint {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Right illustration panel */
+.role-right {
+  flex: 0 0 54%;
+  position: relative;
+  background: var(--bg-white);
+  overflow: hidden;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 56px;
+}
+
+.role-illustration-glow {
+  position: absolute;
+  inset: -60px -20px;
+  background:
+    radial-gradient(ellipse 60% 50% at 40% 30%, var(--role-glow-indigo), transparent 65%),
+    radial-gradient(ellipse 60% 55% at 65% 70%, var(--role-glow-teal), transparent 65%);
+  filter: blur(6px);
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.role-illustration-img {
+  position: relative;
+  z-index: 1;
+  width: 120%;
+  max-width: 560px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 20px 40px var(--role-card-shadow));
+  border-radius: 28px;
+
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%),
+                       linear-gradient(to bottom, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%),
+              linear-gradient(to bottom, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-composite: intersect;
+}
+
+@media (min-width: 1100px) {
+  .role-right { display: flex; }
+}
+
+@media (max-width: 768px) {
+  .role-left { padding: 40px 24px; max-width: 100%; }
+  .role-heading { font-size: 32px; }
+}

@@ -1,0 +1,122 @@
+/* src/pages/AuthPage.css
+   Shares its visual language with RoleSelectionPage.css: same brand
+   chip (.brand-chip, global.css), same CTA color/hover (.btn-viking,
+   global.css), same heading weight/letter-spacing and text-secondary
+   subheading treatment, just scaled down for a centered card layout
+   instead of a full-height split screen. */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 40px 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 40px 36px;
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.auth-brand-img { height: 32px; width: auto; display: block; }
+
+/* Mirrors .role-heading / .role-subheading hierarchy at card scale. */
+.auth-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+.auth-subtitle { font-size: 14px; color: var(--text-secondary); margin-bottom: 28px; }
+
+.input-with-icon { position: relative; display: flex; align-items: center; }
+.input-with-icon input { padding-left: 40px; }
+.input-with-icon .input-icon {
+  position: absolute; left: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.input-with-icon .input-icon-toggle {
+  position: absolute; right: 10px;
+  background: transparent;
+  color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+}
+.input-with-icon .input-icon-toggle:hover { color: var(--text-secondary); background: var(--border-light); }
+
+/* Color/hover come from the shared .btn-viking token (global.css),
+   the same CTA used by the Role Selection "Create account" button;
+   this class only carries page-specific sizing. */
+.auth-submit-btn { width: 100%; padding: 15px 20px; font-size: 15px; margin-top: 4px; }
+
+.auth-divider {
+  display: flex; align-items: center; text-align: center;
+  color: var(--text-muted); font-size: 12px;
+  margin: 22px 0;
+}
+.auth-divider::before, .auth-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+.auth-divider span { padding: 0 12px; }
+
+.auth-google-btn {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+  gap: 10px;
+}
+.auth-google-btn:hover { background: var(--border-light); border-color: var(--text-muted); }
+
+.google-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Google's rendered button ships in its own iframe with a fixed-height
+   default; this trims the extra vertical whitespace Google adds around
+   it so it sits flush with the rest of the form instead of floating with
+   a visible gap above/below. */
+.google-btn-wrapper > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .auth-page { padding: 32px 20px; }
+}
+
+@media (max-width: 480px) {
+  .auth-card { padding: 32px 24px; }
+  .auth-title { font-size: 22px; }
+}
+
+@media (max-width: 360px) {
+  .auth-card { padding: 28px 18px; }
+}
