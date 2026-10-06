@@ -1,0 +1,161 @@
+/* src/pages/SignInSelectPage.css
+   Brought onto the Dashboard design system: the previous pink/purple
+   gradient background and black CTA buttons are replaced with the
+   app's primary-blue palette and shared .btn system. Layout/structure
+   is unchanged. */
+.signin-select-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 900px 500px at 55% 0%, var(--primary-light) 0%, rgba(239,246,255,0) 60%),
+    radial-gradient(ellipse 700px 400px at 40% 5%, rgba(124,58,237,0.08) 0%, rgba(124,58,237,0) 60%),
+    var(--bg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.ss-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 2;
+}
+.ss-nav-left { display: flex; align-items: center; gap: 36px; }
+.ss-logo { display: flex; align-items: center; }
+.ss-logo-img { height: 40px; width: auto; display: block; }
+.ss-nav-links { display: flex; align-items: center; gap: 28px; }
+.ss-nav-links a {
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.ss-nav-links a:hover { color: var(--text-primary); text-decoration: none; }
+
+.ss-nav-right { display: flex; align-items: center; gap: 10px; }
+.ss-link-btn {
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 8px 10px;
+}
+.ss-link-btn:hover { text-decoration: underline; }
+
+.ss-outline-btn {
+  background: var(--bg-white);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+}
+.ss-outline-btn:hover { background: var(--border-light); text-decoration: none; }
+
+/* Color/hover now come from the shared .btn-viking token (global.css);
+   this class only carries page-specific sizing. */
+.ss-black-btn {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+}
+.ss-black-btn:hover { text-decoration: none; }
+
+.ss-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 60px 40px 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.ss-col {
+  flex: 1;
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.ss-badge {
+  display: inline-flex;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+
+.ss-heading {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.ss-heading em { font-weight: 500; }
+
+.ss-desc {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  max-width: 380px;
+}
+
+.ss-login-btn {
+  padding: 11px 40px;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 56px;
+}
+
+.ss-switch {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.ss-switch a { color: var(--success); font-weight: 600; }
+.ss-switch a:hover { text-decoration: underline; }
+
+.ss-divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--border);
+  margin: 0 10px;
+}
+
+.ss-sparkle {
+  position: absolute;
+  bottom: 8%;
+  right: 5%;
+  color: var(--primary-light);
+  z-index: 1;
+}
+
+@media (max-width: 860px) {
+  .ss-nav-links { display: none; }
+  .ss-body { flex-direction: column; padding: 40px 24px 80px; gap: 48px; }
+  .ss-divider { width: 60%; height: 1px; align-self: center; margin: 0; }
+  .ss-col { max-width: 100%; padding: 0; }
+}
+
+@media (max-width: 520px) {
+  .ss-nav { padding: 14px 18px; }
+  .ss-nav-right .ss-outline-btn { display: none; }
+}
