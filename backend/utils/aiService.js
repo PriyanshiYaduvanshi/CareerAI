@@ -79,7 +79,7 @@ const callGroq = async (prompt) => {
       () => axios.post(
         'https://api.groq.com/openai/v1/chat/completions',
         {
-          model: 'llama-3.1-8b-instant', // llama3-8b-8192 was decommissioned by Groq (May 2025)
+          model: 'openai/gpt-oss-20b', // llama3-8b-8192 was decommissioned by Groq (May 2025)
           messages: [{ role: 'user', content: prompt }],
           temperature: 0.7,
         },
